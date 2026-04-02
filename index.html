@@ -159,8 +159,12 @@ nav{
   display:flex;
   flex-direction:column;
   gap:3rem;
-  transform:translateX(100%);
+  transform:translateX(calc(100% + .7rem));
   transition:transform .3s ease;
+}
+.nav-overlay[hidden],
+.nav-drawer[hidden]{
+  display:none !important;
 }
 .nav-drawer-head{
   display:flex;
