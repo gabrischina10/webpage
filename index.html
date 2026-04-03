@@ -969,11 +969,13 @@ section{position:relative}
 .ref-card{background:white;border-radius:6px;padding:2rem;display:flex;flex-direction:column;gap:1.2rem}
 .ref-head{display:flex;align-items:center;gap:1rem}
 .ref-avatar{
-  width:52px;
-  height:52px;
-  border-radius:50%;
+  width:72px;
+  height:72px;
+  border-radius:22px;
   overflow:hidden;
-  background:var(--sand);
+  background:linear-gradient(180deg,var(--cream-2),var(--sand));
+  border:1px solid rgba(206,196,181,.8);
+  box-shadow:0 10px 24px rgba(62,46,33,.1);
   flex-shrink:0;
   display:flex;
   align-items:center;
@@ -983,7 +985,16 @@ section{position:relative}
   font-size:1.4rem;
   color:var(--rust);
 }
-.ref-avatar img{width:100%;height:100%;object-fit:cover}
+.ref-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 24%;
+  display:block;
+}
+.ref-avatar-francesco img{object-position:center 18%}
+.ref-avatar-mafalda img{object-position:center 20%}
+.ref-avatar-paolo img{object-position:center 18%}
 .ref-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ink)}
 .ref-role{font-size:.75rem;color:var(--muted);overflow-wrap:anywhere}
 .ref-mark{font-family:'Playfair Display',serif;font-size:3rem;color:var(--rust2);line-height:.4;margin-bottom:.5rem}
@@ -1227,8 +1238,9 @@ body.js .rv.on{opacity:1;transform:none}
     gap:.8rem;
   }
   .ref-avatar{
-    width:46px;
-    height:46px;
+    width:58px;
+    height:58px;
+    border-radius:18px;
   }
   .contact-h{
     margin-bottom:2rem;
@@ -1590,7 +1602,9 @@ body.js .rv.on{opacity:1;transform:none}
  <div class="ref-grid">
   <div class="ref-card rv">
    <div class="ref-head">
-    <div class="ref-avatar">👨🏻‍💼</div>
+    <div class="ref-avatar ref-avatar-francesco">
+     <img src="foto6.png" alt="Francesco">
+    </div>
     <div>
      <div class="ref-name">Francesco</div>
      <div class="ref-role">Internship Mentor</div>
@@ -1601,8 +1615,8 @@ body.js .rv.on{opacity:1;transform:none}
   </div>
   <div class="ref-card rv">
    <div class="ref-head">
-    <div class="ref-avatar">
-     <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/369685db-478b-44e4-90a6-cd55d1e5a3be/c23da662-3329-49a2-8fe8-88f12d0f306b/646a3e98-f98e-4351-b83e-7870af9eef1c.png" alt="Mafalda" onerror="this.style.display='none'">
+    <div class="ref-avatar ref-avatar-mafalda">
+     <img src="foto5.png" alt="Mafalda">
     </div>
     <div>
      <div class="ref-name">Mafalda</div>
@@ -1614,8 +1628,8 @@ body.js .rv.on{opacity:1;transform:none}
   </div>
   <div class="ref-card rv">
    <div class="ref-head">
-    <div class="ref-avatar">
-     <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/369685db-478b-44e4-90a6-cd55d1e5a3be/7f62c1b8-e65c-4474-9914-12656cecc3d1/c9b74881-6004-45a7-bf51-db71c3540061.png" alt="Paolo" onerror="this.style.display='none'">
+    <div class="ref-avatar ref-avatar-paolo">
+     <img src="foto7.png" alt="Paolo">
     </div>
     <div>
      <div class="ref-name">Paolo</div>
@@ -1627,7 +1641,7 @@ body.js .rv.on{opacity:1;transform:none}
   </div>
   <div class="ref-cta rv">
    <div class="ref-cta-h">Want to write<br>the <em>next one?</em></div>
-   <a class="ref-cta-a" href="mailto:gabrieleschina00@gmail.com">Get in touch →</a>
+   <a class="ref-cta-a" href="#contact">Get in touch →</a>
   </div>
  </div>
 </section>
