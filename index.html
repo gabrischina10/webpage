@@ -49,11 +49,16 @@ section[id]{scroll-margin-top:7.5rem}
   pointer-events:none;
   z-index:9999;
   transform:translate(-50%,-50%);
-  transition:width .18s,height .18s,opacity .18s;
+  transition:width .18s,height .18s,opacity .18s,background-color .18s,box-shadow .18s;
   mix-blend-mode:multiply;
   opacity:0;
 }
 body.cursor-ready #cur{opacity:1}
+#cur.light{
+  background:rgba(251,247,240,.96);
+  mix-blend-mode:screen;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 18px rgba(251,247,240,.14);
+}
 #cur.big{width:36px;height:36px;opacity:.5}
 #prog{
   position:fixed;
@@ -998,7 +1003,7 @@ section{position:relative}
 .tl-bullets li::before{content:'·';position:absolute;left:0;color:var(--rust)}
 .projects-grid{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:1.5rem;
 }
 .projects-grid > *{min-width:0}
@@ -1050,7 +1055,7 @@ section{position:relative}
 .ref-role{font-size:.75rem;color:var(--muted);overflow-wrap:anywhere}
 .ref-mark{font-family:'Playfair Display',serif;font-size:3rem;color:var(--rust2);line-height:.4;margin-bottom:.5rem}
 .ref-text{font-size:.9rem;font-weight:300;line-height:1.72;color:var(--ink);font-style:italic;flex:1;overflow-wrap:anywhere}
-.ref-cta{background:var(--rust);border-radius:6px;padding:2rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.2rem}
+.ref-cta{background:var(--rust);border-radius:6px;padding:2rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.2rem;transition:transform .24s ease,box-shadow .24s ease;transform-origin:center;will-change:transform}
 .ref-cta-h{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1.3;color:white}
 .ref-cta-h em{font-style:italic}
 .ref-cta-a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:white;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:.2rem;transition:opacity .2s}
@@ -1089,6 +1094,13 @@ body.js .rv.on{opacity:1;transform:none}
   }
   body.js .ref-card.rv.on:hover,
   .ref-card:hover{
+    transform:scale(1.025);
+    box-shadow:0 24px 44px rgba(62,46,33,.15);
+    position:relative;
+    z-index:2;
+  }
+  body.js .ref-cta.rv.on:hover,
+  .ref-cta:hover{
     transform:scale(1.025);
     box-shadow:0 24px 44px rgba(62,46,33,.15);
     position:relative;
@@ -1478,7 +1490,7 @@ body.js .rv.on{opacity:1;transform:none}
   <div class="hero-side" aria-hidden="true">
    <div class="hero-card hero-card-main">
     <div class="hero-photo">
-     <img src="foto1.jpeg" alt="Gabriele walking by the sea at sunset">
+     <img src="optimized/foto1-opt.jpg" alt="Gabriele walking by the sea at sunset">
     </div>
    </div>
    <div class="hero-card hero-card-secondary">
@@ -1543,15 +1555,15 @@ body.js .rv.on{opacity:1;transform:none}
   </div>
   <div class="mosaic rv">
    <div class="mo mo1">
-    <img src="foto2.jpeg" alt="Gabriele on a boat" onerror="this.parentElement.style.background='linear-gradient(135deg,#D4B896,#C4966A)';this.style.display='none'">
+    <img src="optimized/foto2-opt.jpg" alt="Gabriele on a boat" onerror="this.parentElement.style.background='linear-gradient(135deg,#D4B896,#C4966A)';this.style.display='none'">
     <span class="mo-caption">dolce vita advocate 😎</span>
    </div>
    <div class="mo mo2">
-    <img src="foto4.jpg" alt="Roots, always" onerror="this.parentElement.style.background='linear-gradient(135deg,#C4622D,#A04820)';this.style.display='none'">
+    <img src="optimized/foto4-opt.jpg" alt="Roots, always" onerror="this.parentElement.style.background='linear-gradient(135deg,#C4622D,#A04820)';this.style.display='none'">
     <span class="mo-caption">roots, always</span>
    </div>
    <div class="mo mo3">
-    <img src="foto3.jpg" alt="Airplane window at sunset" onerror="this.parentElement.style.background='#B8A090';this.style.display='none'">
+    <img src="optimized/foto3-opt.jpg" alt="Airplane window at sunset" onerror="this.parentElement.style.background='#B8A090';this.style.display='none'">
     <span class="mo-caption">✈️</span>
    </div>
   </div>
@@ -1735,6 +1747,19 @@ body.js .rv.on{opacity:1;transform:none}
    </div>
    <a class="proj-link" href="https://www.linkedin.com/in/gabriele-schina/details/projects/" target="_blank" rel="noreferrer">See on LinkedIn →</a>
   </div>
+  <div class="proj rv">
+   <div class="proj-label">🔥 ITES SRL — Internal Project</div>
+   <div class="proj-title">Internal Operations System</div>
+   <p class="proj-desc">I designed and developed an internal operations system to automate daily workflows and solve inefficiencies in field reporting and documentation management. The solution includes a Telegram-based interface for real-time data input, a centralized database, and a live dashboard used by management to monitor employees, clients, and active job sites. I also integrated AI capabilities through the Claude API to enable advanced querying, reporting, and support for generating documentation required for public administration processes, including compliance declarations and safety plans. The project significantly improved operational visibility, reduced manual workload, and streamlined internal processes.</p>
+   <div class="proj-skills">
+    <span class="proj-skill">Process Automation</span>
+    <span class="proj-skill">AI Integration</span>
+    <span class="proj-skill">Dashboard Development</span>
+    <span class="proj-skill">API Integration</span>
+    <span class="proj-skill">Workflow Optimization</span>
+   </div>
+   <span class="proj-link">Case Study (Coming Soon)</span>
+  </div>
   <div class="proj empty rv">
    <div class="proj-empty-label">More coming soon…<br><span style="font-size:.8rem;color:var(--sand2);font-family:'Figtree',sans-serif;font-style:normal;">🚧 Work in progress</span></div>
   </div>
@@ -1750,7 +1775,7 @@ body.js .rv.on{opacity:1;transform:none}
   <div class="ref-card rv">
    <div class="ref-head">
     <div class="ref-avatar ref-avatar-francesco">
-     <img src="foto6.png" alt="Francesco">
+     <img src="optimized/foto6-opt.jpg" alt="Francesco">
     </div>
     <div>
      <div class="ref-name">Francesco</div>
@@ -1763,7 +1788,7 @@ body.js .rv.on{opacity:1;transform:none}
   <div class="ref-card rv">
    <div class="ref-head">
     <div class="ref-avatar ref-avatar-mafalda">
-     <img src="foto5.png" alt="Mafalda">
+     <img src="optimized/foto5-opt.jpg" alt="Mafalda">
     </div>
     <div>
      <div class="ref-name">Mafalda</div>
@@ -1776,7 +1801,7 @@ body.js .rv.on{opacity:1;transform:none}
   <div class="ref-card rv">
    <div class="ref-head">
     <div class="ref-avatar ref-avatar-paolo">
-     <img src="foto7.png" alt="Paolo">
+     <img src="optimized/foto7-opt.jpg" alt="Paolo">
     </div>
     <div>
      <div class="ref-name">Paolo</div>
@@ -1860,6 +1885,9 @@ if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
   document.addEventListener('mousemove',e=>{
     cur.style.left=e.clientX+'px';
     cur.style.top=e.clientY+'px';
+    const hovered=document.elementFromPoint(e.clientX,e.clientY);
+    const isDarkZone=hovered?.closest('.s-edu,.s-exp');
+    cur.classList.toggle('light',Boolean(isDarkZone));
   },{passive:true});
 
   document.querySelectorAll(interactive).forEach(el=>{
