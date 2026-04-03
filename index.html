@@ -80,6 +80,12 @@ nav{
   background:linear-gradient(180deg,rgba(247,242,234,.92),rgba(247,242,234,.65));
   border-bottom:1px solid rgba(206,196,181,.28);
 }
+.nav-brand{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  min-width:0;
+}
 .nav-logo{
   font-family:'Playfair Display',serif;
   font-style:italic;
@@ -89,6 +95,31 @@ nav{
   line-height:.95;
   opacity:1;
   flex-shrink:0;
+}
+.lang-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  border:1px solid rgba(206,196,181,.9);
+  background:rgba(255,252,247,.76);
+  color:var(--ink);
+  border-radius:999px;
+  padding:.36rem .65rem;
+  font:inherit;
+  font-size:.62rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  line-height:1;
+  white-space:nowrap;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.lang-toggle-flag{
+  font-size:.82rem;
+  line-height:1;
+}
+.lang-toggle-label{
+  opacity:.7;
 }
 .nav-links{
   display:flex;
@@ -1070,6 +1101,7 @@ body.js .rv.on{opacity:1;transform:none}
 @media(max-width:900px){
   nav{padding:1rem 1.25rem;align-items:flex-start}
   .nav-logo{font-size:.95rem}
+  .nav-brand{gap:.65rem}
   .nav-links{gap:.9rem 1rem}
   .nav-links a{font-size:.58rem}
   .hero{padding:7rem 1.25rem 4rem;min-height:auto;align-items:flex-start}
@@ -1099,9 +1131,17 @@ body.js .rv.on{opacity:1;transform:none}
     padding:.95rem 1.15rem;
     gap:.8rem;
   }
+  .nav-brand{
+    gap:.55rem;
+  }
   .nav-logo{
     font-size:.92rem;
     line-height:.9;
+  }
+  .lang-toggle{
+    padding:.34rem .55rem;
+    font-size:.56rem;
+    letter-spacing:.12em;
   }
   .nav-links{
     display:none;
@@ -1377,7 +1417,14 @@ body.js .rv.on{opacity:1;transform:none}
 <div id="prog"></div>
 
 <nav>
- <a class="nav-logo" href="#top">G.<br>Schina</a>
+ <div class="nav-brand">
+  <a class="nav-logo" href="#top">G.<br>Schina</a>
+  <button class="lang-toggle" type="button" aria-label="Current language: English. Italian version coming soon." title="Italian version coming soon">
+   <span class="lang-toggle-flag" aria-hidden="true">🇬🇧</span>
+   <span>EN</span>
+   <span class="lang-toggle-label">only</span>
+  </button>
+ </div>
  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">☰</button>
  <ul class="nav-links">
  <li><a href="#about">About</a></li>
@@ -1392,7 +1439,14 @@ body.js .rv.on{opacity:1;transform:none}
 <div class="nav-overlay" hidden></div>
 <div class="nav-drawer" id="mobile-menu" hidden>
  <div class="nav-drawer-head">
-  <a class="nav-logo" href="#top">G.<br>Schina</a>
+  <div class="nav-brand">
+   <a class="nav-logo" href="#top">G.<br>Schina</a>
+   <button class="lang-toggle" type="button" aria-label="Current language: English. Italian version coming soon." title="Italian version coming soon">
+    <span class="lang-toggle-flag" aria-hidden="true">🇬🇧</span>
+    <span>EN</span>
+    <span class="lang-toggle-label">only</span>
+   </button>
+  </div>
   <button class="nav-close" type="button" aria-label="Close navigation">×</button>
  </div>
  <ul class="nav-drawer-links">
