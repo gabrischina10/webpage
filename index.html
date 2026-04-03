@@ -581,6 +581,11 @@ footer{
   color:var(--muted);
   backdrop-filter:blur(10px);
 }
+@media(min-width:769px){
+  .hero-photo-label{
+    bottom:-.45rem;
+  }
+}
 .hero-photo-label::before{
   content:'';
   width:.38rem;
@@ -1164,8 +1169,9 @@ body.js .rv.on{opacity:1;transform:none}
     display:none;
   }
   .nav-toggle{display:block}
-  .hero{padding:4.2rem 1.25rem 3.5rem}
+  .hero{padding:3.45rem 1.25rem 3.5rem}
   .hero-inner{gap:2rem}
+  .hero-tag{margin-bottom:1.15rem}
   .hero-side{
     min-height:auto;
     display:flex;
@@ -1366,7 +1372,8 @@ body.js .rv.on{opacity:1;transform:none}
   .hero-divider::before{width:2.2rem}
   .hero-links{gap:.85rem 1rem}
   .hero-link{font-size:.68rem}
-  .hero{padding:3.95rem 1.15rem 3.25rem}
+  .hero{padding:3.05rem 1.15rem 3.25rem}
+  .hero-tag{margin-bottom:1rem}
   .hero-side{gap:.9rem}
   .hero-side::before{
     left:3%;
