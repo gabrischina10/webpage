@@ -12,12 +12,12 @@ This repository contains the source code of my personal website, built and publi
 
 This website is a personal portfolio where I present:
 
-* My background and education (Double Degree Italy–Germany)
+* My background and education
 * Projects and real-world experiences
-* Skills in business, strategy, and AI-driven automation
+* Skills in business, strategy, and AI driven automation
 * Selected work and case studies
 
-The goal is to provide a clear, structured, and accessible overview of my profile.
+The goal is to provide a clear, dynamic, structured, and accessible overview of my profile.
 
 ---
 
@@ -29,7 +29,7 @@ The website is built as a static site using:
 * Simple assets (images)
 * GitHub Pages for hosting
 
-No frameworks or backend — lightweight and fast.
+No frameworks or backend: lightweight and fast.
 
 
 ---
