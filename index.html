@@ -943,6 +943,24 @@ section{position:relative}
 .tl-year{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:.5rem}
 .tl-role{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--cream);margin-bottom:.2rem;overflow-wrap:anywhere}
 .tl-where{font-size:.85rem;color:var(--muted);margin-bottom:.9rem;overflow-wrap:anywhere}
+.tl-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem .4rem;
+  margin-bottom:.9rem;
+}
+.tl-tag{
+  display:inline-flex;
+  align-items:center;
+  font-size:.64rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.28rem .7rem;
+  border-radius:999px;
+  background:rgba(192,90,42,.16);
+  color:var(--rust2);
+  border:1px solid rgba(232,149,106,.12);
+}
 .tl-desc{font-size:.9rem;font-weight:300;line-height:1.72;color:#A89C8E;max-width:620px;overflow-wrap:anywhere}
 .tl-bullets{margin-top:.7rem;list-style:none;display:flex;flex-direction:column;gap:.4rem}
 .tl-bullets li{font-size:.88rem;font-weight:300;color:#A89C8E;padding-left:1rem;position:relative;overflow-wrap:anywhere}
@@ -1031,12 +1049,14 @@ body.js .rv.on{opacity:1;transform:none}
     position:relative;
     z-index:2;
   }
+  body.js .proj.rv.on:not(.empty):hover,
   .proj:not(.empty):hover{
     transform:scale(1.025);
     box-shadow:0 24px 44px rgba(97,67,41,.15);
     position:relative;
     z-index:2;
   }
+  body.js .ref-card.rv.on:hover,
   .ref-card:hover{
     transform:scale(1.025);
     box-shadow:0 24px 44px rgba(62,46,33,.15);
@@ -1562,15 +1582,60 @@ body.js .rv.on{opacity:1;transform:none}
  </div>
  <div class="timeline">
   <div class="tl rv">
-   <div class="tl-year">2024 — ongoing</div>
-   <div class="tl-role">Double Degree MSc Student</div>
-   <div class="tl-where">University of Pavia &amp; Otto-Friedrich-Universität Bamberg</div>
-   <p class="tl-desc">Pursuing a Double Degree Master between Italy and Germany — immersed in strategy, innovation, entrepreneurship, and the kind of international environment that actually shapes you.</p>
+   <div class="tl-year">Mar 2024 — Sep 2024</div>
+   <div class="tl-role">Social Media Manager</div>
+   <div class="tl-where">daMè Restaurant &amp; Pizza · Taranto, Italy 🇮🇹 · Freelance</div>
+   <div class="tl-meta">
+    <span class="tl-tag">Freelance</span>
+    <span class="tl-tag">Digital Marketing</span>
+    <span class="tl-tag">Content Strategy</span>
+   </div>
+   <ul class="tl-bullets">
+    <li>Led the restaurant's digital marketing launch, growing its Instagram presence from 0 to 1,000+ organic followers within months.</li>
+    <li>Created branded visual content in Canva for social platforms, shaping a consistent identity for the restaurant's online debut.</li>
+    <li>Designed and monitored Meta campaigns, using engagement data and platform metrics to improve content and paid performance.</li>
+   </ul>
+  </div>
+  <div class="tl rv">
+   <div class="tl-year">Feb 2024 — May 2024</div>
+   <div class="tl-role">Business Operations Intern</div>
+   <div class="tl-where">ITES · Taranto, Italy 🇮🇹 · Mandatory internship</div>
+   <div class="tl-meta">
+    <span class="tl-tag">Internship</span>
+    <span class="tl-tag">Operations</span>
+    <span class="tl-tag">Public Tenders</span>
+   </div>
+   <ul class="tl-bullets">
+    <li>Supported public-sector tendering activities through feasibility analysis and preparation of bid documentation.</li>
+    <li>Researched competitive bidding strategies and market pricing to strengthen proposal accuracy and positioning.</li>
+    <li>Worked across administration, accounting, and marketing, gaining hands-on exposure to SME operations.</li>
+   </ul>
+  </div>
+  <div class="tl rv">
+   <div class="tl-year">May 2021 — Sep 2022</div>
+   <div class="tl-role">Floor Manager — Seasonal</div>
+   <div class="tl-where">DM Restaurant · Taranto, Apulia, Italy 🇮🇹</div>
+   <div class="tl-meta">
+    <span class="tl-tag">Seasonal</span>
+    <span class="tl-tag">Hospitality</span>
+    <span class="tl-tag">Team Leadership</span>
+   </div>
+   <p class="tl-desc">Returned across two summer seasons to help lead front-of-house operations in a fast-paced restaurant environment.</p>
+   <ul class="tl-bullets">
+    <li>Led a 7-person front-of-house team, coordinating with kitchen operations during high-volume service of 200+ covers per evening.</li>
+    <li>Maintained service quality and workflow under pressure, helping the team deliver a smooth and efficient guest experience.</li>
+    <li>Strengthened organization, stakeholder coordination, and real-time problem solving in a fast-paced environment.</li>
+   </ul>
   </div>
   <div class="tl rv">
    <div class="tl-year">Aug 2019 — Nov 2019</div>
-   <div class="tl-role">Waiter / Bar Waiter — Seasonal</div>
+   <div class="tl-role">Waiter — Seasonal</div>
    <div class="tl-where">Al Ponte Restaurant · Ingolstadt, Germany 🇩🇪 · Work experience abroad</div>
+   <div class="tl-meta">
+    <span class="tl-tag">Seasonal</span>
+    <span class="tl-tag">Hospitality</span>
+    <span class="tl-tag">Abroad</span>
+   </div>
    <ul class="tl-bullets">
     <li>Provided personalised service to an international clientele, adapting to diverse cultures and needs.</li>
     <li>Enhanced communication skills by interacting daily with German-speaking customers and colleagues.</li>
