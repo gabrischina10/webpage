@@ -1,34 +1,47 @@
-# Publish This Site
+# Gabriele Schina — Personal Website
 
-This folder is ready for GitHub Pages.
+This repository contains the source code of my personal website, built and published using GitHub Pages.
 
-Contents:
-- `index.html`
-- `foto1.jpeg`
-- `foto2.jpeg`
-- `foto3.jpg`
-- `foto4.jpg`
+## 🌐 Live Website
 
-Quick publish:
+👉 https://gabrischina10.github.io/webpage/
 
-```bash
-cd publish
-git init
-git add .
-git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-git push -u origin main
-```
+---
 
-Then on GitHub:
+## 📌 About
 
-1. Open the repository
-2. Go to `Settings > Pages`
-3. Under `Build and deployment`, choose `Deploy from a branch`
-4. Select `main` and `/root`
-5. Save
+This website is a personal portfolio where I present:
 
-Your site will be available after a minute or two at:
+* My background and education (Double Degree Italy–Germany)
+* Projects and real-world experiences
+* Skills in business, strategy, and AI-driven automation
+* Selected work and case studies
 
-`https://YOUR-USERNAME.github.io/YOUR-REPO/`
+The goal is to provide a clear, structured, and accessible overview of my profile.
+
+---
+
+## ⚙️ Tech & Structure
+
+The website is built as a static site using:
+
+* HTML / CSS
+* Simple assets (images)
+* GitHub Pages for hosting
+
+No frameworks or backend — lightweight and fast.
+
+
+---
+
+## 🔓 Why this repository is public
+
+This repository is public because the website is deployed via GitHub Pages and serves as my personal online portfolio.
+
+---
+
+## 📬 Contact
+
+Feel free to connect with me:
+
+* LinkedIn: https://www.linkedin.com/in/gabriele-schina/
