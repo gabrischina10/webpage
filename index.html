@@ -891,6 +891,8 @@ section{position:relative}
   padding:2.2rem;
   border-left:2px solid var(--rust);
   transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+  transform-origin:center;
+  will-change:transform;
 }
 .edu-card-wide{grid-column:1 / -1}
 .edu-date{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:.8rem}
@@ -951,7 +953,7 @@ section{position:relative}
   gap:1.5rem;
 }
 .projects-grid > *{min-width:0}
-.proj{background:var(--sand);border-radius:6px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:transform .24s ease,box-shadow .24s ease}
+.proj{background:var(--sand);border-radius:6px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:transform .24s ease,box-shadow .24s ease;transform-origin:center;will-change:transform}
 .proj.empty{border:1.5px dashed var(--sand2);background:transparent;display:flex;align-items:center;justify-content:center;min-height:220px}
 .proj-empty-label{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--sand2);text-align:center}
 .proj-label{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
@@ -966,7 +968,7 @@ section{position:relative}
   gap:1.8rem;
 }
 .ref-grid > *{min-width:0}
-.ref-card{background:white;border-radius:6px;padding:2rem;display:flex;flex-direction:column;gap:1.2rem;transition:transform .24s ease,box-shadow .24s ease}
+.ref-card{background:white;border-radius:6px;padding:2rem;display:flex;flex-direction:column;gap:1.2rem;transition:transform .24s ease,box-shadow .24s ease;transform-origin:center;will-change:transform}
 .ref-head{display:flex;align-items:center;gap:1rem}
 .ref-avatar{
   width:72px;
@@ -1023,17 +1025,23 @@ body.js .rv.on{opacity:1;transform:none}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(hover:hover) and (pointer:fine){
   .edu-card:hover{
-    transform:translateY(-6px) scale(1.012);
-    box-shadow:0 20px 44px rgba(0,0,0,.16);
+    transform:scale(1.025);
+    box-shadow:0 24px 52px rgba(0,0,0,.18);
     border-left-color:var(--rust2);
+    position:relative;
+    z-index:2;
   }
   .proj:not(.empty):hover{
-    transform:translateY(-6px) scale(1.012);
-    box-shadow:0 20px 38px rgba(97,67,41,.12);
+    transform:scale(1.025);
+    box-shadow:0 24px 44px rgba(97,67,41,.15);
+    position:relative;
+    z-index:2;
   }
   .ref-card:hover{
-    transform:translateY(-6px) scale(1.012);
-    box-shadow:0 20px 38px rgba(62,46,33,.12);
+    transform:scale(1.025);
+    box-shadow:0 24px 44px rgba(62,46,33,.15);
+    position:relative;
+    z-index:2;
   }
 }
 @media(max-width:1100px){
