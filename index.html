@@ -289,7 +289,10 @@ body.menu-open .drawer { transform: translateX(0); }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--nav-h) + clamp(1.25rem, 4vw, 2.75rem)) 0 clamp(1.5rem, 3vw, 2.5rem);
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 2rem) 0 clamp(3rem, 7vh, 5.5rem);
 }
 .hero::before {
   content: '';
@@ -308,10 +311,11 @@ body.menu-open .drawer { transform: translateX(0); }
 .hero-grid {
   position: relative;
   z-index: 1;
+  width: min(100% - 2.5rem, var(--maxw));
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
   gap: clamp(2.5rem, 6vw, 5rem);
-  align-items: start;
+  align-items: center;
 }
 .hero-grid > * { min-width: 0; }
 .hero-copy { min-width: 0; }
@@ -369,7 +373,8 @@ body.menu-open .drawer { transform: translateX(0); }
 .hero-link:hover::after { opacity: 1; transform: scaleX(1.06); }
 .hero-scroll {
   display: inline-grid; place-items: center;
-  width: 2.5rem; height: 2.5rem; margin-top: 1.9rem;
+  width: 2.6rem; height: 2.6rem;
+  margin-top: clamp(3rem, 8vh, 6rem);
   border: 1px solid var(--border-strong); border-radius: 999px;
   color: var(--ink-2);
   transition: border-color 0.2s, color 0.2s;
@@ -383,7 +388,7 @@ body.menu-open .drawer { transform: translateX(0); }
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
-  aspect-ratio: 4 / 4.5;
+  aspect-ratio: 4 / 5.1;
   background: var(--surface);
 }
 .hero-figure-inner { display: block; height: 100%; transform: rotate(1.4deg) scale(1.06); }
@@ -804,9 +809,11 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .burger { display: grid; place-items: center; }
-  .hero-grid { grid-template-columns: 1fr; gap: 2.75rem; }
-  .hero-figure { max-width: 26rem; }
+  .hero { min-height: 0; padding-top: calc(var(--nav-h) + 1.5rem); }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+  .hero-figure { max-width: 26rem; aspect-ratio: 4 / 4.6; }
   .hero-figure-inner { transform: none; }
+  .hero-scroll { margin-top: 2rem; }
   .about-grid { grid-template-columns: 1fr; }
   .mosaic { align-self: auto; height: clamp(20rem, 72vw, 26rem); }
   .edu-grid, .skills-grid, .ref-grid { grid-template-columns: 1fr; }
