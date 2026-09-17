@@ -1392,6 +1392,15 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
     trigger.addEventListener('click', function () {
       var open = acc.classList.toggle('is-open');
       trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        var group = acc.closest('.acc-list');
+        group.querySelectorAll('[data-acc].is-open').forEach(function (other) {
+          if (other !== acc) {
+            other.classList.remove('is-open');
+            other.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
     });
   });
 
