@@ -174,7 +174,6 @@ a { color: inherit; text-decoration: none; }
   height: 2px; width: 0;
   background: var(--accent);
   z-index: 1200;
-  box-shadow: 0 0 16px rgba(224, 164, 88, 0.35);
 }
 
 /* --- Navigation --------------------------------------------------------------- */
@@ -212,7 +211,7 @@ a { color: inherit; text-decoration: none; }
   list-style: none;
 }
 .nav-links a {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -251,7 +250,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-cta {
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 0.62rem 1.1rem;
@@ -334,7 +333,7 @@ body.menu-open .drawer { transform: translateX(0); }
 .hero-copy { min-width: 0; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 0.7rem;
-  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 1.2rem;
 }
@@ -346,7 +345,6 @@ body.menu-open .drawer { transform: translateX(0); }
   width: 0.45rem; height: 0.45rem; border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-tint);
-  animation: dotPulse 2.6s ease-in-out infinite;
 }
 .hero-title {
   font-family: var(--sans);
@@ -447,7 +445,7 @@ body.menu-open .drawer { transform: translateX(0); }
   flex-shrink: 0;
 }
 .section-kicker {
-  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--accent);
   display: block; margin-bottom: 0.45rem;
 }
@@ -486,9 +484,9 @@ body.menu-open .drawer { transform: translateX(0); }
   text-wrap: balance;
 }
 .about-lede em { color: var(--accent); font-style: normal; }
-.about-p { color: var(--ink-2); margin-bottom: 0.95rem; overflow-wrap: break-word; }
+.about-p { color: var(--ink-2); margin-bottom: 0.95rem; overflow-wrap: break-word; text-wrap: pretty; }
 .about-p:last-of-type { margin-bottom: 0; }
-.about-p.setup { color: var(--ink-3); }
+.about-p.is-ink { color: var(--ink); font-weight: 700; }
 .about-p strong { color: var(--accent); font-weight: 700; }
 .about-p em { color: var(--accent); font-style: normal; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
@@ -539,7 +537,7 @@ body.menu-open .drawer { transform: translateX(0); }
 /* --- Education ------------------------------------------------------------------ */
 .edu-flag {
   width: fit-content;
-  font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--accent);
   padding: 0.4rem 0.9rem; border-radius: 999px;
   background: var(--accent-tint);
@@ -549,7 +547,6 @@ body.menu-open .drawer { transform: translateX(0); }
 .edu-card {
   background: var(--raised);
   border: 1px solid var(--border);
-  border-left: 2px solid var(--accent);
   border-radius: var(--radius-md);
   padding: 1.9rem;
   transition: transform 0.3s var(--ease-out), border-color 0.3s ease,
@@ -562,12 +559,12 @@ body.menu-open .drawer { transform: translateX(0); }
   box-shadow: 0 26px 52px -30px rgba(0, 0, 0, 0.7);
 }
 .edu-card.wide { grid-column: 1 / -1; }
-.edu-date { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
+.edu-date { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
 .edu-deg { font-weight: 600; font-size: 1.12rem; line-height: 1.3; margin-bottom: 0.35rem; letter-spacing: -0.01em; }
 .edu-uni { font-size: 0.86rem; color: var(--ink-2); margin-bottom: 0.9rem; overflow-wrap: break-word; }
 .edu-badges { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 .edu-badge {
-  font-size: 0.66rem; letter-spacing: 0.06em;
+  font-size: 0.72rem; letter-spacing: 0.06em;
   padding: 0.28rem 0.7rem; border-radius: 999px;
   background: var(--surface); border: 1px solid var(--border);
   color: var(--ink-3);
@@ -577,7 +574,7 @@ body.menu-open .drawer { transform: translateX(0); }
 .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 3.25rem); }
 .skill-label {
   display: block;
-  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
 }
@@ -614,7 +611,7 @@ body.menu-open .drawer { transform: translateX(0); }
   transition: padding-left 0.25s var(--ease-out);
 }
 .acc:hover .acc-trigger { padding-left: 1rem; }
-.acc-k { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.acc-k { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .acc-main { min-width: 0; }
 .acc-h { font-weight: 600; font-size: clamp(1.12rem, 2.1vw, 1.4rem); line-height: 1.25; letter-spacing: -0.02em; display: block; overflow-wrap: break-word; }
 .acc-sub { font-size: 0.85rem; color: var(--ink-2); display: block; margin-top: 0.25rem; overflow-wrap: break-word; }
@@ -650,7 +647,7 @@ body.menu-open .drawer { transform: translateX(0); }
 .acc-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-size: 1.2rem; line-height: 1; }
 .acc-metatags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1.2rem 0 0; }
 .acc-metatag {
-  font-size: 0.66rem; letter-spacing: 0.05em;
+  font-size: 0.72rem; letter-spacing: 0.05em;
   padding: 0.3rem 0.75rem; border-radius: 999px;
   background: var(--surface); border: 1px solid var(--border); color: var(--ink-3);
 }
@@ -716,12 +713,12 @@ body.menu-open .drawer { transform: translateX(0); }
 .contact-h em { font-style: normal; color: var(--accent); }
 .contact-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.5rem; }
 .contact-item { display: flex; flex-direction: column; gap: 0.35rem; }
-.contact-item span:first-child { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+.contact-item span:first-child { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
 .contact-item span:last-child { font-size: 1rem; color: var(--ink); border-bottom: 1px solid var(--accent); padding-bottom: 0.2rem; transition: color 0.2s; overflow-wrap: break-word; }
 .contact-item:hover span:last-child { color: var(--accent); }
 .relocate {
   display: inline-block; margin-top: 2.5rem;
-  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--accent);
   padding: 0.55rem 1.3rem; border: 1px solid var(--accent); border-radius: 999px;
 }
@@ -742,10 +739,6 @@ body.menu-open .drawer { transform: translateX(0); }
 @keyframes glowPulse {
   0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(1); }
   50%      { opacity: 0.8;  transform: translate(-50%, -50%) scale(1.12); }
-}
-@keyframes dotPulse {
-  0%, 100% { box-shadow: 0 0 0 4px var(--accent-tint); }
-  50%      { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 12%, transparent); }
 }
 @keyframes scrollCue {
   0%   { transform: translateY(-5px); opacity: 0; }
@@ -923,14 +916,14 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
       </div>
       <div class="about-grid rv">
         <div class="about-card">
-          <p class="about-lede">You've stumbled upon <em>something special</em>!</p>
-          <p class="about-p setup">Not a billion dollar lottery win (though I wish I could make that happen).</p>
-          <p class="about-p"><strong>But something just as valuable.</strong></p>
+          <p class="about-lede">You've stumbled upon <em>something special!</em></p>
+          <p class="about-p">Not a billion dollar lottery win (though I wish I could make that happen).</p>
+          <p class="about-p is-ink">But something just as valuable.</p>
           <p class="about-p">Your all-access pass to getting to know me.<br>Pretty exciting, right?</p>
           <p class="about-p">Jokes aside, <strong>welcome to my world!</strong></p>
           <p class="about-p">In a nutshell: I'm a lover of order and simplicity, someone who finds peace in the sound of crashing waves.</p>
           <p class="about-p">I'm an advocate for the dolce vita, and I have a soft spot for travelling 🤩</p>
-          <p class="about-p">European Jiu Jitsu champion, 2016. For real.</p>
+          <p class="about-p is-ink">European Jiu Jitsu champion, 2016. For real.</p>
           <div class="tags">
             <span class="tag">Business Strategy</span>
             <span class="tag">Entrepreneurship</span>
