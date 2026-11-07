@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gabriele Schina · Portfolio</title>
-<meta name="description" content="Portfolio of Gabriele Schina. Double Degree MSc student in International Business & Entrepreneurship and Business Administration. Open to relocate.">
+<meta name="description" content="Portfolio of Gabriele Schina. Product Builder at Complaion. Double Degree MSc in International Business & Entrepreneurship and Business Administration. Open to relocate.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%91%F0%9F%8F%BC%E2%80%8D%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gabrischina10.github.io/webpage/">
 <meta property="og:title" content="Gabriele Schina · Portfolio">
-<meta property="og:description" content="Double Degree MSc student in International Business & Entrepreneurship and Business Administration. Open to relocate.">
+<meta property="og:description" content="Product Builder at Complaion. Double Degree MSc in International Business & Entrepreneurship and Business Administration. Open to relocate.">
 <meta property="og:image" content="https://gabrischina10.github.io/webpage/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gabriele Schina · Portfolio">
-<meta name="twitter:description" content="Double Degree MSc student in International Business & Entrepreneurship and Business Administration. Open to relocate.">
+<meta name="twitter:description" content="Product Builder at Complaion. Double Degree MSc in International Business & Entrepreneurship and Business Administration. Open to relocate.">
 <meta name="twitter:image" content="https://gabrischina10.github.io/webpage/og-image.png">
 
 <!-- Theme: follows the system by default (prefers-color-scheme). An explicit choice
@@ -138,10 +138,10 @@
 
 html {
   scroll-behavior: smooth;
-  /* Anchor jumps land the section's heading just below the fixed nav. This is the
-     ONLY offset in play — sections carry no extra scroll-margin so the two don't
-     stack into a big empty gap above the heading. */
-  scroll-padding-top: calc(var(--nav-h) + 0.75rem);
+  /* Anchor jumps put the section's top edge flush under the fixed nav: any extra
+     offset shows a strip of the previous section. This is the ONLY offset in play,
+     sections carry no scroll-margin. */
+  scroll-padding-top: var(--nav-h);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -611,7 +611,7 @@ body.menu-open .drawer { transform: translateX(0); }
   cursor: pointer;
   transition: padding-left 0.25s var(--ease-out);
 }
-.acc:hover .acc-trigger { padding-left: 1rem; }
+.acc:hover .acc-trigger, .acc:hover .acc-body { padding-left: 1rem; }
 .acc-k { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .acc-main { min-width: 0; }
 .acc-h { font-weight: 600; font-size: clamp(1.12rem, 2.1vw, 1.4rem); line-height: 1.25; letter-spacing: -0.02em; display: block; overflow-wrap: break-word; }
@@ -636,7 +636,9 @@ body.menu-open .drawer { transform: translateX(0); }
 .acc.is-open .acc-panel { grid-template-rows: 1fr; }
 .acc.is-open .acc-panel-in { opacity: 1; }
 .acc-body {
-  padding: 0.2rem 0 2rem;
+  /* same left padding as .acc-trigger, also on hover, so panel content lines up with the title */
+  padding: 0.2rem 0.25rem 2rem;
+  transition: padding-left 0.25s var(--ease-out);
   display: grid;
   grid-template-columns: 11rem minmax(0, 1fr);
   gap: 1.5rem;
@@ -891,7 +893,7 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
           <span class="line"><span>Gabriele</span></span>
           <span class="line"><span class="em">Schina</span></span>
         </h1>
-        <p class="hero-lede">Currently Product Builder <a href="https://www.linkedin.com/company/complaion/posts/?feedView=all" target="_blank" rel="noreferrer">@Complaion</a> | Double Degree MSc&nbsp;🇩🇪🇮🇹</p>
+        <p class="hero-lede">Currently Product Builder <a href="https://www.linkedin.com/company/complaion/posts/?feedView=all" target="_blank" rel="noreferrer">@Complaion</a><br>Double Degree MSc&nbsp;🇩🇪🇮🇹</p>
         <p class="hero-heart"><span class="heart">Italian at heart&nbsp;♡</span></p>
         <div class="hero-actions">
           <a class="hero-link" href="#about">Explore my story</a>
@@ -1068,7 +1070,7 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
             <span class="acc-plus" aria-hidden="true"></span>
           </button>
           <div class="acc-panel"><div class="acc-panel-in"><div class="acc-body"><div class="acc-body-main">
-            <a class="acc-out" href="https://www.linkedin.com/in/gabriele-schina/details/experience/" target="_blank" rel="noreferrer">See on LinkedIn →</a>
+            <div class="acc-metatags"><span class="acc-metatag">AI</span><span class="acc-metatag">Product</span></div>
           </div></div></div></div>
         </div>
 
