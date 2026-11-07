@@ -239,8 +239,12 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
-.icon-btn:hover { border-color: var(--accent); color: var(--accent); transform: rotate(-15deg); }
-.icon-btn svg { width: 1rem; height: 1rem; }
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: hover) { .icon-btn:hover { transform: rotate(-15deg); } }
+.icon-btn svg, .burger svg { width: 1rem; height: 1rem; }
+/* invisible 44px touch area around the 35px round buttons */
+.icon-btn, .burger { position: relative; }
+.icon-btn::after, .burger::after { content: ''; position: absolute; inset: -5px; border-radius: inherit; }
 .theme-toggle .moon { display: none; }
 :root[data-theme='light'] .theme-toggle .sun { display: none; }
 :root[data-theme='light'] .theme-toggle .moon { display: block; }
@@ -610,9 +614,10 @@ body.menu-open .drawer { transform: translateX(0); }
   background: none; border: 0;
   font: inherit; color: inherit; text-align: left;
   cursor: pointer;
-  transition: padding-left 0.25s var(--ease-out);
 }
-.acc:hover .acc-trigger, .acc:hover .acc-body { padding-left: 1rem; }
+/* hover nudge only where hover exists: on touch it would stick after a tap */
+.acc-k, .acc-main, .acc-body-main { transition: transform 0.25s var(--ease-out); }
+@media (hover: hover) { .acc:hover :is(.acc-k, .acc-main, .acc-body-main) { transform: translateX(0.75rem); } }
 .acc-k { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .acc-main { min-width: 0; }
 .acc-h { font-weight: 600; font-size: clamp(1.12rem, 2.1vw, 1.4rem); line-height: 1.25; letter-spacing: -0.02em; display: block; overflow-wrap: break-word; }
@@ -637,9 +642,8 @@ body.menu-open .drawer { transform: translateX(0); }
 .acc.is-open .acc-panel { grid-template-rows: 1fr; }
 .acc.is-open .acc-panel-in { opacity: 1; }
 .acc-body {
-  /* same left padding as .acc-trigger, also on hover, so panel content lines up with the title */
+  /* same left padding as .acc-trigger so panel content lines up with the title */
   padding: 0.2rem 0.25rem 2rem;
-  transition: padding-left 0.25s var(--ease-out);
   display: grid;
   grid-template-columns: 11rem minmax(0, 1fr);
   gap: 1.5rem;
@@ -820,6 +824,8 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .burger { display: grid; place-items: center; }
+  .nav { grid-template-columns: 1fr auto; }
+  .brand { white-space: nowrap; }
   .hero { min-height: 0; padding-top: calc(var(--nav-h) + 1.5rem); }
   .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .hero-figure { max-width: 26rem; aspect-ratio: 4 / 4.6; }
@@ -835,6 +841,7 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
 }
 @media (max-width: 520px) {
   .wrap { width: calc(100% - 2rem); }
+  .nav { padding-inline: 1rem; }
   .hero-title { font-size: clamp(2.9rem, 15vw, 4rem); }
   .section-head { gap: 0.9rem; }
   .section { padding: clamp(3.75rem, 12vw, 5rem) 0; }
@@ -865,7 +872,7 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z"/></svg>
     </button>
     <a class="nav-cta" href="#contact">Get in touch</a>
-    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">☰</button>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
   </div>
 </header>
 
@@ -873,7 +880,7 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
 <nav class="drawer" id="drawer" hidden aria-label="Mobile">
   <div class="drawer-head">
     <a class="brand" href="#top">Gabriele Schina</a>
-    <button class="icon-btn drawer-close" type="button" aria-label="Close menu">✕</button>
+    <button class="icon-btn drawer-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <ul class="drawer-links">
     <li><a href="#about">About</a></li>
