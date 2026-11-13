@@ -629,6 +629,42 @@ body.menu-open .drawer { transform: translateX(0); }
   background: var(--surface); border: 1px solid var(--border); color: var(--ink-3);
 }
 .section-alt .acc-metatag { background: var(--bg); }
+
+/* --- Pills (skills, about tags, education badges, project tags) -----------------
+   Same language as the cards: a small lift + zoom on hover and the spotlight
+   (inner glow + brighter rim) following the pointer via --mx / --my. */
+.tag, .skill-pills span, .edu-badge, .acc-metatag {
+  position: relative; isolation: isolate;
+  transition: translate 0.35s var(--ease-out), scale 0.35s var(--ease-out),
+              border-color 0.25s ease, color 0.25s ease, box-shadow 0.35s var(--ease-out);
+}
+:is(.tag, .skill-pills span, .edu-badge, .acc-metatag)::before,
+:is(.tag, .skill-pills span, .edu-badge, .acc-metatag)::after {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit;
+  pointer-events: none; opacity: 0; transition: opacity 0.3s ease;
+}
+:is(.tag, .skill-pills span, .edu-badge, .acc-metatag)::before {
+  z-index: -1;
+  background: radial-gradient(5rem circle at var(--mx, 50%) var(--my, 50%),
+              color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+}
+:is(.tag, .skill-pills span, .edu-badge, .acc-metatag)::after {
+  padding: 1px;
+  background: radial-gradient(4rem circle at var(--mx, 50%) var(--my, 50%),
+              var(--accent), transparent 75%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+@media (hover: hover) {
+  :is(.tag, .skill-pills span, .edu-badge, .acc-metatag):hover {
+    translate: 0 -2px; scale: 1.05;
+    border-color: var(--border-strong); color: var(--ink);
+    box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.45);
+  }
+  :is(.tag, .skill-pills span, .edu-badge, .acc-metatag):hover::before,
+  :is(.tag, .skill-pills span, .edu-badge, .acc-metatag):hover::after { opacity: 1; }
+}
 .acc-out {
   display: inline-flex; align-items: center; gap: 0.4rem;
   margin-top: 1.3rem;
@@ -1405,7 +1441,7 @@ body.ready .hero-figure  { animation: heroUp 0.95s 0.35s both; }
 
   /* --- Card spotlight: feed the pointer position to the CSS gradient -------- */
   if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.edu-card, .ref-card').forEach(function (card) {
+    document.querySelectorAll('.edu-card, .ref-card, .tag, .skill-pills span, .edu-badge, .acc-metatag').forEach(function (card) {
       card.addEventListener('pointermove', function (e) {
         var r = card.getBoundingClientRect();
         // divide out the hover scale so the light sits exactly under the pointer
