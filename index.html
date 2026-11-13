@@ -33,11 +33,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@500..800&family=Wix+Madefor+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400..800&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================================
-   Design tokens, carried over from the RAL calculator: Wix Madefor Display for
+   Design tokens, shared with the RAL calculator: Mona Sans for
    everything, graphite + amber, dark-first with a system-following default and
    an explicit toggle. Hierarchy is weight / size / tracking / accent colour,
    never a second typeface or italics.
@@ -68,11 +68,11 @@
   --card-rest: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 1px 2px rgba(0, 0, 0, 0.3);
   --card-lift: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 4px 8px -2px rgba(0, 0, 0, 0.35), 0 28px 50px -20px rgba(0, 0, 0, 0.7);
 
-  /* Same pairing as Jet HR: Mona Sans for headings (--display), Wix Madefor
-     Display for body text. No serif / italic face. --serif is kept as an alias
-     so existing rules resolve, but it points at the body grotesque. */
-  --sans: 'Wix Madefor Display', -apple-system, 'SF Pro Text', 'Segoe UI', system-ui, Roboto, sans-serif;
-  --display: 'Mona Sans', var(--sans);
+  /* One typeface everywhere, like Complaion: Mona Sans. Hierarchy comes from
+     weight, size, tracking and the amber accent. --display and --serif are kept
+     as aliases so existing rules resolve. */
+  --sans: 'Mona Sans', -apple-system, 'SF Pro Text', 'Segoe UI', system-ui, Roboto, sans-serif;
+  --display: var(--sans);
   --serif: var(--sans);
 
   --maxw: 1120px;
